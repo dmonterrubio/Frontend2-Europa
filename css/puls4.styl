@@ -3,6 +3,16 @@ gris_oscuro = #444
 gris_texto = #7A7A7A
 naranja = #DD4F24
 
+@font-face {
+    font-family: 'iconitos';
+    src:url('../fonts/icomoon.eot');
+    src:url('../fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/icomoon.ttf') format('truetype'),
+        url('../fonts/icomoon.woff') format('woff'),
+        url('../fonts/icomoon.svg#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal
+}
 a
 	color naranja
 
@@ -12,6 +22,24 @@ body
 	font-family Arial
 	font-size 16px
 
+footer
+	background naranja
+	color rgba(white,0.5)
+	padding 1em 0
+	text-align center
+	width 100%
+
+	h3
+		font-size 14px
+		font-weight normal
+
+		strong
+			display block
+
+		.mejor
+			&:before
+			&:before
+				content "-"
 header
 	background gris_oscuro
 	box-shadow 0 5px 0 rgba(0,0,0,0.2)
@@ -49,6 +77,12 @@ header
 			text-decoration none
 			text-shadow 1px 1px 0px black
 
+			&:before
+				display inline-block
+				content "\e600"
+				font-family "iconitos"
+				margin 0 3px 0 0 
+
 		.titulo
 			font-size 18px
 			font-weight normal
@@ -61,7 +95,7 @@ header
 		right 10px
 
 		.avatar
-			margin 0 1em 0 0 
+			margin 0 1.1em 0 0 
 			position relative
 			z-index 2
 
@@ -73,14 +107,20 @@ header
 			background naranja
 			color white
 			display block
-			padding 3px
+			padding 2px
 			position absolute
 			right 0 
 			top 15px
 			text-align right
+			text-decoration none
 			width 50%
 			z-index 0
-						
+			&:after
+				display inline-block
+				content "\e602"
+				font-family iconitos
+				text-shadow  1px 1px 0px black
+
 nav
 	background azul
 	border-left 15px solid white
@@ -119,8 +159,9 @@ nav
 	.post
 		background white
 		border-radius 0 0 0.5em 0.5em
-		color gris_texto
 		box-shadow 2px 2px 10px rgba(black, 0.5)
+		color gris_texto
+		margin-bottom 1em
 
 		.acciones
 			border-top 3px solid azul
@@ -130,17 +171,47 @@ nav
 			.datos
 				float right
 
+				.comentarios
+					background gris_oscuro
+					border-radius 3px
+					color white
+					margin 0 1em 0 0 
+					padding 2px 5px
+					text-decoration none
+
+				.estrellita
+					text-decoration none
+					&:after
+						color #E0D561
+						content "\e601"
+						font-family iconitos
+						
+
 			.votos
 				float left
 
 				.down
 				.up
 					text-decoration none
+
 				.down
 					color red
+					&:before
+						content "\e602"
+						font-family "iconitos"
+						font-size 1.5em
+						vertical-align bottom 
+
 
 				.up
 					color green
+
+					&:before
+						content "\e603"
+						font-family "iconitos"
+						font-size 1.5em
+						vertical-align bottom 
+
 		.descripcion
 			color gris_texto
 
@@ -176,6 +247,32 @@ nav
 					height 160px
 					vertical-align top
 					width 120px
+
+
+@media screen and (min-width: 768px)
+	
+	header
+		.titular
+			.publicar
+				padding-left 3em
+				position relative
+
+				&:before
+					left 0px
+					font-size 2.5em
+					position absolute
+					top -10px
+	.posts
+		.post
+			display inline-block
+			width 48%
+			vertical-align top
+			&:nth-child(odd)
+				margin-right 2%
+
+
+
+
 
 
 
